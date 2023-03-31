@@ -1,0 +1,34 @@
+﻿@model NDKSkateShopMVC.Models.Brand
+
+@{
+    ViewBag.Title = "Chitietbrand";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align: center; padding-top: 23px; font-weight: bold;">THÔNG TIN CHI TIẾT THƯƠNG HIỆU</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên thương hiệu:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenBrand)
+        </dd>
+
+        <dt>
+            Xuất xứ:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.XuatXu)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Điều chỉnh", "Suabrand", new { id = Model.MaBrand }) |
+    @Html.ActionLink("Trở về", "Brand")
+</p>

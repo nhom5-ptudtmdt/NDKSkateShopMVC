@@ -1,0 +1,114 @@
+﻿@using NDKSkateShopMVC.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSP.cshtml";
+    CommonInfo x = (CommonInfo)HttpContext.Current.Application["dungChung"];
+}
+
+
+<div class="bike-apparels">
+    <div class="parts1">
+        @foreach (SanPham i in x.SanPhamComplete(4))
+        {
+            <a href="single.html">
+                <div class="part-sec">
+                    <img src="@i.AnhDD" alt="@i.TenSP" />
+                    <div class="part-info">
+                        <a href="#"><h5>@i.TenSP<span>@i.GiaBan</span></h5></a>
+                        <a class="add-cart" href="@Url.Action("Details", "Skateboards", new { id = i.MaSP})">Quick View</a>
+                        <a class="qck" href="/ShoppingCart/AddtoCart/@i.MaSP">BUY NOW</a>
+                    </div>
+                </div>
+            </a>
+        }
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="parts2">
+        @foreach (SanPham i in x.SanPhamDeck(4))
+        {
+            <a href="single.html">
+                <div class="part-sec">
+                    <img src="@i.AnhDD" alt="@i.TenSP" />
+                    <div class="part-info">
+                        <a href="#"><h5>@i.TenSP<span>@i.GiaBan</span></h5></a>
+                        <a class="add-cart" href="@Url.Action("Details", "Skateboards", new { id = i.MaSP})">Quick View</a>
+                        <a class="qck" href="/ShoppingCart/AddtoCart/@i.MaSP">BUY NOW</a>
+                    </div>
+                </div>
+            </a>
+        }
+
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="parts3">
+        @foreach (SanPham i in x.SanPhamTruck(4))
+        {
+            <a href="single.html">
+                <div class="part-sec">
+                    <img src="@i.AnhDD" alt="@i.TenSP" />
+                    <div class="part-info">
+                        <a href="#"><h5>@i.TenSP<span>@i.GiaBan</span></h5></a>
+                        <a class="add-cart" href="@Url.Action("Details", "Skateboards", new { id = i.MaSP})">Quick View</a>
+                        <a class="qck" href="/ShoppingCart/AddtoCart/@i.MaSP">BUY NOW</a>
+                    </div>
+                </div>
+            </a>
+        }
+
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="parts4">
+        @foreach (SanPham i in x.SanPhamWheel(4))
+        {
+            <a href="single.html">
+                <div class="part-sec bottom-line">
+                    <img src="@i.AnhDD" alt="@i.TenSP" />
+                    <div class="part-info">
+                        <a href="#"><h5>@i.TenSP<span>@i.GiaBan</span></h5></a>
+                        <a class="add-cart" href="@Url.Action("Details", "Skateboards", new { id = i.MaSP})">Quick View</a>
+                        <a class="qck" href="/ShoppingCart/AddtoCart/@i.MaSP">BUY NOW</a>
+                    </div>
+                </div>
+            </a>
+        }
+
+        <div class="clearfix"></div>
+    </div>
+    <div class="parts2">
+        @foreach (SanPham i in x.SanPhamBearing(4))
+        {
+            <a href="single.html">
+                <div class="part-sec">
+                    <img src="@i.AnhDD" alt="@i.TenSP" />
+                    <div class="part-info">
+                        <a href="#"><h5>@i.TenSP<span>@i.GiaBan</span></h5></a>
+                        <a class="add-cart" href="@Url.Action("Details", "Skateboards", new { id = i.MaSP})">Quick View</a>
+                        <a class="qck" href="/ShoppingCart/AddtoCart/@i.MaSP">BUY NOW</a>
+                    </div>
+                </div>
+            </a>
+        }
+        <div class="clearfix"></div>
+    </div>
+    <div class="parts2">
+        @foreach (SanPham i in x.SanPhamGripTape(4))
+        {
+            <a href="single.html">
+                <div class="part-sec">
+                    <img src="@i.AnhDD" alt="@i.TenSP" />
+                    <div class="part-info">
+                        <a href="#"><h5>@i.TenSP<span>@i.GiaBan</span></h5></a>
+                        <a class="add-cart" href="@Url.Action("Details", "Skateboards", new { id = i.MaSP})">Quick View</a>
+                        <a class="qck" href="/ShoppingCart/AddtoCart/@i.MaSP">BUY NOW</a>
+                    </div>
+                </div>
+            </a>
+        }
+        <div class="clearfix"></div>
+    </div>
+
+</div>
+            

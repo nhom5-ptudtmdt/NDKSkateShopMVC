@@ -1,0 +1,81 @@
+﻿@model NDKSkateShopMVC.Models.SanPham
+
+@{
+    ViewBag.Title = "Xoasp";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align: center; padding-top: 23px; font-weight: bold;">XÁC NHẬN XÓA SẢN PHẨM</h2>
+
+<h3>Bạn quyết định xóa sản phẩm này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên sản phẩm:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+            Giá bán:
+        </dt>
+
+        <dd>
+            @String.Format("{0:0,0}", Model.GiaBan) VNĐ
+
+        </dd>
+
+        <dt>
+            Nội dung:
+        </dt>
+
+        <dd style="width:600px; text-align:justify">
+            @Html.DisplayFor(model => model.NoiDung)
+        </dd>
+
+        <dt>
+            Ảnh đại diện:
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.AnhDD)" width="120px" />
+        </dd>
+
+        <dt>
+            Số lượng tồn:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongTon)
+        </dd>
+
+        <dt>
+            Thương hiệu:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand.TenBrand)
+        </dd>
+
+        <dt>
+            Loại:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Part.TenParts)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Trở về", "SanPham")
+        </div>
+    }
+</div>

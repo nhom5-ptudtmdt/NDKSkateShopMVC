@@ -1,0 +1,26 @@
+﻿@model NDKSkateShopMVC.Models.Part
+
+@{
+    ViewBag.Title = "Chitietpart";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align: center; padding-top: 23px; font-weight: bold;">THÔNG TIN CHI TIẾT LOẠI</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Loại:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenParts)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Điều chỉnh", "Suapart", new { id = Model.MaParts}) |
+    @Html.ActionLink("Trở về", "Part")
+</p>

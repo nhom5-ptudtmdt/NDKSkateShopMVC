@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDH.cshtml";
+}
+
+<div class="product">
+    <div class="container">
+        <div class="ctnt-bar cntnt">
+            <div class="content-bar">
+                <div class="single-page">
+                    <div class="product-head">
+                        <a href="@Url.Action("Index","Home")">Home</a>
+                    </div>
+                    <!--Include the Etalage files-->
+                    <link rel="stylesheet" href="~/Content/etalage.css">
+                    <script src="~/Scripts/jquery.etalage.min.js"></script>
+                    <script>
+                        jQuery(document).ready(function ($) {
+
+                            $('#etalage').etalage({
+                                thumb_image_width: 400,
+                                thumb_image_height: 400,
+                                source_image_width: 800,
+                                source_image_height: 1000,
+                                show_hint: true,
+                                click_callback: function (image_anchor, instance_id) {
+                                    alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
+                                }
+                            });
+
+                        });
+                    </script>
+                    <!--//details-product-slider-->
+                    <div class="details-left-slider">
+                        <div class="grid images_3_of_2">
+                            <ul id="etalage">
+                                <li>
+                                    <a href="optionallink.html">
+                                        <img class="etalage_thumb_image" src="@Model.AnhDD" class="img-responsive" />
+                                        <img class="etalage_source_image" src="@Model.AnhDD" class="img-responsive" title="" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="details-left-info">
+                        <h3>@Model.TenSP</h3>
+                        <h4><span>Model No: </span>@Model.MaSP</h4>
+                        <h4></h4>
+                        <p><label>VND</label> @Model.GiaBan</p>
+                        <div class="btn_form">
+                            <a href="/ShoppingCart/AddtoCart/@Model.MaSP">buy now</a>
+                            <a href="/ShoppingCart/AddtoCart/@Model.MaSP">ADD TO CART</a>
+                        </div>
+                        <h5>Mô tả:</h5>
+                        <p class="desc">
+                            @Model.NoiDung
+                        </p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<NDKSkateShopMVC.Models.Brand>
+
+@{
+    ViewBag.Title = "Brand";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align: center; padding-top: 23px; font-weight: bold;">QUẢN LÝ THÔNG TIN THƯƠNG HIỆU</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Thembrand")
+</p>
+<table class="table" border="1">
+    <tr>
+        <th style="width:495px">Tên thương hiệu</th>
+        <th style="width:495px">Xuất xứ</th>
+        <th style="width:300px">Công cụ</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenBrand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.XuatXu)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Suabrand", new { id = item.MaBrand }) |
+                @Html.ActionLink("Chi tiết", "Chitietbrand", new { id = item.MaBrand }) |
+                @Html.ActionLink("Xóa", "Xoabrand", new { id = item.MaBrand })
+            </td>
+        </tr>
+    }
+
+</table>

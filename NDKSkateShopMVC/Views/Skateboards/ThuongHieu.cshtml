@@ -1,0 +1,10 @@
+﻿@model IEnumerable<NDKSkateShopMVC.Models.Brand>
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("SPTheoBrand","Skateboards", new { id = item.MaBrand})" class="list-group-item">@item.TenBrand</a>
+    }
+</div>
+
+
+

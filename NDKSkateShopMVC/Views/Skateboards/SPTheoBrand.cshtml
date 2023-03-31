@@ -1,0 +1,27 @@
+﻿@model IEnumerable<NDKSkateShopMVC.Models.SanPham>
+@{
+    ViewBag.Title = "SPTheoBP";
+    Layout = "~/Views/Shared/_LayoutSP.cshtml";
+}
+<div class="bike-apparels">
+    <div class="parts1">
+        @foreach (var sanpham in Model)
+        {
+            <a href="@Url.Action("Details", "Skateboards", new { id = sanpham.MaSP})">
+                <div class="part-sec">
+                    <img src="@sanpham.AnhDD" alt="@sanpham.TenSP" />
+                    <div class="part-info">
+                        <a href="#"><h5>@sanpham.TenSP<span>@sanpham.GiaBan</span></h5></a>
+                        <a class="add-cart" href="@Url.Action("Details", "Skateboards", new { id = sanpham.MaSP})">Quick View</a>
+                        <a class="qck" href="/ShoppingCart/AddtoCart/@sanpham.MaSP">BUY NOW</a>
+                    </div>
+                </div>
+            </a>
+        }
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+
+
+

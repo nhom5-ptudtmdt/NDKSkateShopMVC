@@ -1,0 +1,11 @@
+﻿
+@{ 
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <h1 style="text-align: center; padding-top: 23px; font-weight: bold;">Welcome @(User.Identity.IsAuthenticated ? HttpContext.Current.User.Identity.Name : "Guest")</h1>
+    <h4 style="text-align: center; padding-top: 23px;" ><a href="@Url.Action("SignOut","Admin")">Logout</a></h4>
+}

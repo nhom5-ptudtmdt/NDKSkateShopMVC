@@ -1,0 +1,74 @@
+﻿@model NDKSkateShopMVC.Models.SanPham
+
+@{
+    ViewBag.Title = "Chitietsp";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align: center; padding-top: 23px; font-weight: bold;">THÔNG TIN CHI TIẾT SẢN PHẨM</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên sản phẩm:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+            Giá bán:
+        </dt>
+
+        <dd>
+            @String.Format("{0:0,0}", Model.GiaBan) VNĐ
+
+        </dd>
+
+        <dt>
+            Nội dung:
+        </dt>
+
+        <dd style="width:600px; text-align:justify">
+            @Html.DisplayFor(model => model.NoiDung)
+        </dd>
+
+        <dt>
+            Ảnh đại diện:
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.AnhDD)" width="120px"/>
+        </dd>
+
+        <dt>
+            Số lượng tồn:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongTon)
+        </dd>
+
+        <dt>
+            Thương hiệu:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand.TenBrand)
+        </dd>
+
+        <dt>
+            Loại:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Part.TenParts)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Điều chỉnh", "Suasp", new { id = Model.MaSP }) |
+    @Html.ActionLink("Trở về", "SanPham")
+</p>

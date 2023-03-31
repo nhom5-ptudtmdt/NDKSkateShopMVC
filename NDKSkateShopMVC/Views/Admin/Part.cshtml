@@ -1,0 +1,33 @@
+﻿@model IEnumerable<NDKSkateShopMVC.Models.Part>
+
+@{
+    ViewBag.Title = "Part";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align: center; padding-top: 23px; font-weight: bold;">QUẢN LÝ THÔNG TIN LOẠI</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Thempart")
+</p>
+<table class="table" border="1">
+    <tr>
+        <th style="width:990px">Tên loại sản phẩm</th>
+        <th style="width:300px">Công cụ</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenParts)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Suapart", new { id = item.MaParts }) |
+                @Html.ActionLink("Chi tiết", "Chitietpart", new { id = item.MaParts }) |
+                @Html.ActionLink("Xóa", "Xoapart", new { id = item.MaParts })
+            </td>
+        </tr>
+    }
+
+</table>
